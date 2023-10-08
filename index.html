@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Tools for Understanding Water Pollution</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #88C0D0; 
+            color:  #062347;
+            font-size:x-large;
+        }
+        body {
+            background: url("projectback.jpg") no-repeat center center fixed; 
+            
+            background-size: cover;
+            background-color: #88C0D0;
+        }
+        .water-cycle-section {
+            background-color: #8FBCBB; 
+            padding: 20px;
+            color: #5E81AC; /* White text */
+            margin-top: 20px;
+        }
+
+        .water-cycle-section h2 {
+            font-size: 24px; /* Larger font size for the heading */
+            margin-bottom: 10px;
+        }
+
+        header {
+            background-color: #789eea; /* Slightly lighter blue for header */
+            box-shadow: 0 2px 5px rgba(54, 245, 255, 0.682);
+            padding: 15px;
+            padding-left: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: url("protitleback\ \(1\).jpg") no-repeat center center fixed;
+            border: 3px solid #184072;
+            border-radius: 20px;
+        }
+
+        header h1 {
+            font-size: 70px;
+            margin-bottom: 5px;
+            font-style: oblique;
+            color:cyan;
+
+        }
+        header h1:hover {
+        color: #04afff;
+        cursor: pointer; /* Change cursor on hover */
+        }
+        nav {
+            margin-top: auto; /* Push the nav to the bottom */
+        }
+        nav a {
+            color: #6da5c0; /* White text for links */
+            margin: 5 10px;
+            text-decoration: none;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            transition: color 0.3s ease;
+            font-size: x-large;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color: #00a6ff;
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #19ecff; /* Slightly lighter blue for footer */
+            color: #FFFFFF; /* White text for footer */
+            text-align: center;
+            padding: 10px;
+            border-radius: 20px;
+            width: 100%;
+            bottom: 0;
+        }
+        .earth{
+          height: 600px;
+            width: 800px;
+            text-align: center;
+            margin: auto;
+            border-radius: 30px;
+            padding: 15px;
+        }
+        .logo{
+            text-align: right;
+            max-width: 400px;
+            min-width:300px;
+            margin: auto;
+            border-radius: 30px;
+            padding: 15px;
+        }
+        .eutro{
+            height: 600px;
+            width: 800px;
+            text-align: center;
+            margin: auto;
+            border-radius: 30px;
+            padding: 15px;
+        }
+        .effectrain{
+          height: 600px;
+            width: 800px;
+            text-align: center;
+            margin: auto;
+            border-radius: 30px;
+            padding: 15px;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section h2:hover {
+            text-decoration: underline;
+            color: #1ABC9C;
+            color: #1ABC9C;
+            cursor: pointer;
+            
+        }
+        h2{
+          margin-top: 75px;
+          background: url("R223.jpeg") no-repeat center center fixed;
+          color:#230a67;
+          border: 3px solid #0a4898;
+          text-align: center;
+          border-radius: 20px;
+        }
+        p{
+            background: url("e630d69eaf6c15f915e06f39de6c4280.jpg") no-repeat center center fixed;
+            border: 10px solid #015953;
+            border-radius: 10px;
+            padding: 20px;
+
+        }
+        
+
+        .letter-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  
+}
+
+.animated-mail {
+  position: absolute;
+  height: 150px;
+  width: 200px;
+  -webkit-transition: .4s;
+  -moz-transition: .4s;
+  transition: .4s;
+  
+  .body {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 100px 200px;
+    border-color: transparent transparent #0011fb transparent;
+    z-index: 2;
+  }
+  
+  .top-fold {
+    position: absolute;
+    top: 50px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 100px 0 100px;
+    -webkit-transform-origin: 50% 0%;
+    -webkit-transition: transform .4s .4s, z-index .2s .4s;
+    -moz-transform-origin: 50% 0%;
+    -moz-transition: transform .4s .4s, z-index .2s .4s;
+    transform-origin: 50% 0%;
+    transition: transform .4s .4s, z-index .2s .4s;
+    border-color: #006eff transparent transparent transparent;
+    z-index: 2;
+  }
+  
+  .back-fold {
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 100px;
+    background: #006eff;
+    z-index: 0;
+  }
+  
+  .left-fold {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 0 50px 100px;
+    border-color: transparent transparent transparent #0040ff;
+    z-index: 2;
+  }
+  
+  .letter {
+    left: 20px;
+    bottom: 0px;
+    position: absolute;
+    width: 160px;
+    height: 60px;
+    background: white;
+    z-index: 1;
+    overflow: hidden;
+    -webkit-transition: .4s .2s;
+    -moz-transition: .4s .2s;
+    transition: .4s .2s;
+    
+    .letter-border {
+      height: 10px;
+      width: 100%;
+      background: repeating-linear-gradient(
+        -45deg,
+        #0033ff,
+        #00ffee 8px,
+        transparent 8px,
+        transparent 18px
+      );
+    }
+    
+    .letter-title {
+      margin-top: 10px;
+      margin-left: 5px;
+      height: 10px;
+      width: 40%;
+      background: #023d79;
+    }
+    .letter-context {
+      margin-top: 10px;
+      margin-left: 5px;
+      height: 10px;
+      width: 20%;
+      background: #4e0c99;
+    }
+    
+    .letter-stamp {
+      margin-top: 30px;
+      margin-left: 120px;
+      border-radius: 100%;
+      height: 30px;
+      width: 30px;
+      background: #0b14c3;
+      opacity: 0.3;
+    }
+  }
+}
+
+.shadow {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  width: 400px;
+  height: 30px;
+  transition: .4s;
+  transform: translateX(-50%);
+  -webkit-transition: .4s;
+  -webkit-transform: translateX(-50%);
+  -moz-transition: .4s;
+  -moz-transform: translateX(-50%);
+  
+  border-radius: 100%;
+  background: radial-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.0), rgba(0,0,0,0.0));
+}
+
+  .letter-image:hover {
+    .animated-mail {
+      transform: translateY(50px);
+      -webkit-transform: translateY(50px);
+      -moz-transform: translateY(50px);
+    }
+    
+    .animated-mail .top-fold {
+      transition: transform .4s, z-index .2s;
+      transform: rotateX(180deg);
+      -webkit-transition: transform .4s, z-index .2s;
+      -webkit-transform: rotateX(180deg);
+      -moz-transition: transform .4s, z-index .2s;
+      -moz-transform: rotateX(180deg);
+      z-index: 0;
+    }
+    
+    .animated-mail .letter {
+      height: 180px;
+    }
+    
+    .shadow {
+      width: 250px;
+    }
+  }
+
+  :root {
+  --red: #F73F52;
+  --orange: #FF9000;
+  --yellow: #FBD400;
+  --green: #9ED763;
+  --blue: #6730EC;
+  --purple: #815A8F;
+  --white: #FFFFFF;
+  --rebeccapurple: #663399;
+}
+
+.swatch {
+  display: block;
+  text-align: center;
+  position: relative;
+  margin: 100px;
+}
+
+.swatch div {
+  width: 70px;
+  height: 225px;
+  position: absolute;
+  top: 0px;
+  border-radius: 5px;
+  border-top: solid 2px rgba(0, 0, 0, .2);
+  border-left: solid 3px rgba(255, 255, 255, .2);
+  border-bottom: solid 3px rgba(0, 0, 0, .2);
+  text-align: center;
+  box-sizing: border-box;
+  transform-origin: center 90%;
+  display: inline-block;
+  backface-visibility: hidden;
+  margin-left: -35px;
+  transform: rotate(0deg);
+}
+
+.swatch div::before {
+  width: 16px;
+  height: 16px;
+  content: "";
+  background-color: var(--white);
+  display: inline-block;
+  border-radius: 8px;
+  bottom: 10px;
+  position: absolute;
+  margin-left: -8px;
+}
+
+.swatch div:nth-child(1) {
+  background-color: var(--purple);
+  animation: swatch-purple-motion 5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+
+.swatch div:nth-child(2) {
+  background-color: var(--blue);
+  animation: swatch-blue-motion 5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+
+.swatch div:nth-child(3) {
+  background-color: var(--green);
+  animation: swatch-green-motion 5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+
+.swatch div:nth-child(4) {
+  background-color: var(--yellow);
+  animation: swatch-yellow-motion 5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+
+.swatch div:nth-child(5) {
+  background-color: var(--orange);
+  animation: swatch-orange-motion 5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+.swatch div:nth-child(6) {
+  background-color: var(--red);
+  animation: swatch-red-motion 5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+
+
+@keyframes swatch-purple-motion {
+  0% {
+    transform: rotate(0deg);
+  }
+  30%, 70% {
+    transform: rotate(-65deg);
+  }
+  90%, 10% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes swatch-blue-motion {
+  0% {
+    transform: rotate(0deg);
+  }
+  30%, 70% {
+    transform: rotate(-40deg);
+  }
+  90%, 10% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes swatch-green-motion {
+  0% {
+    transform: rotate(0deg);
+  }
+  30%, 70% {
+    transform: rotate(-15deg);
+  }
+  90%, 10% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes swatch-yellow-motion {
+  0% {
+    transform: rotate(0deg);
+  }
+  30%, 70% {
+    transform: rotate(15deg);
+  }
+  90%, 10% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes swatch-orange-motion {
+  0% {
+    transform: rotate(0deg);
+  }
+  30%, 70% {
+    transform: rotate(40deg);
+  }
+  90%, 10% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes swatch-red-motion {
+  0% {
+    transform: rotate(0deg);
+  }
+  30%, 70% {
+    transform: rotate(65deg);
+  }
+  90%, 10% {
+    transform: rotate(0deg);
+  }
+}
+
+
+*{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(15, 169, 200);
+        min-height: 50vh;
+    }
+    .fishtears {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: fit-content;
+        width: 40%;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+    .fishtears {
+        width: 100%;
+    }
+ 
+    .cyclewater {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: fit-content;
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+    .boxy{
+      display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(15, 169, 200);
+        min-height: 50vh;
+    }
+    .earthy{
+      display: flex;
+        align-items: center;
+        justify-content: center;
+        height: fit-content;
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        width: 400px;
+        height: 400px;
+
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <marquee> <h1><big>Visual Tools for Understanding Water Pollution</big></h1></marquee>
+        <br>
+        <nav>
+            <a class="navi" target="_blank" href="index.html.html">&#60;&#60;&#60;Home&#62&#62&#62&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            
+            <a clas="navi" target="_blank" href="watercycleanime.html.html">&#60;&#60;&#60;Animation of Water Cycle&#62&#62&#62&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            
+            <a class="navi" target="_blank" href="contact.html">&#60;&#60;&#60;Contact&#62&#62&#62</a>
+        </nav>
+    </header>
+  
+     <section>
+
+      
+        <div class="letter-image">
+            <div class="animated-mail">
+              <div class="back-fold"></div>
+              <div class="letter">
+                <div class="letter-border"></div>
+                <div class="letter-title"></div>Final Warning
+                <div class="letter-context"></div>
+                <div class="letter-stamp">
+                  <div class="letter-stamp-inner"></div>
+                </div>
+              </div>
+              <div class="top-fold"></div>
+              <div class="body"></div>
+              <div class="left-fold"></div>
+            </div>
+            <div class="shadow"></div>
+          </div>
+            <br>
+            <br>
+            <br>
+
+
+     </section>
+     
+     
+    <div class="content">
+        <section class="fade-in">
+            <h2 class="w3-container w3-cyan"><big>About Water Pollution</big></h2>
+            <p class="w3-container w3-purple">Water pollution happens when harmful substances get into the water, making it dirty and dangerous. It's like adding yucky stuff to your favorite drink, making it not so tasty and healthy.</p>
+
+
+        </section class="fade-in">
+        
+
+        <div class="boxy">
+          <div class="earthy"><img src="https://i.pinimg.com/originals/55/c2/87/55c287196dc9f1c88c072d806451e20d.gif" alt=""></div>
+      </div>
+
+
+
+        <section class="fade-in">
+            <marquee> <h2 class="w3-container w3-cyan"><big>How Does Water Get Polluted???...</big></h2> </marquee>
+            <img class="effectrain" src="OIP (1).jpg" alt="waterpollution">
+            <p class="w3-container w3-purple">Water can get polluted in many ways. When people throw trash in rivers, lakes, or oceans, it's like making a mess in our play area. Chemicals from factories and homes can also find their way into the water, making it harmful for fish and other underwater friends.</p>
+        </section>
+        <div class="box">
+          <div class="img"><img height="400px" width="400px" class="fishtears" src="https://media.tenor.com/c9Wdcla669kAAAAC/pollution-water-pollution.gif" alt="Tears of a Fish"></div>
+      </div>
+    
+        <section class="fade-in">
+            <marquee> <h2 class="w3-container w3-cyan"><big>Why Is Clean Water Important???...</big></h2> </marquee>
+            <img class="eutro" src="R (1).jpg" alt="water">
+            <p class="w3-container w3-purple">Just like how you need a clean room to stay healthy and happy, fish and other water creatures need clean water to survive. Clean water is essential for plants and animals to live and grow. We must protect our water from pollution to keep everyone safe and healthy!</p>
+        </section>
+        <div class="box">
+          <div class="img"><img class="fish tears"src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/ea7d46106921305.5f9ad8277bed3.gif" alt=""></div>
+      </div>
+        <section class="fade-in">
+            <marquee> <h2 class="w3-container w3-cyan"><big>Effects of climate change on water cycle</big></h2></marquee>
+            <img class="effectrain" src="water_cycle-52687e.jpg" alt="watereffect">
+            <p class="w3-container w3-purple">So far, any impact that climate change may have had generally on regional rainfall cannot be distinguished from natural variations. However, for some specific cases a signal is starting to emerge. A recent study showed that man-made climate change substantially increased the odds of damaging floods occurring in England and Wales in autumn 2000.</p>
+        </section>
+        <section class="fade-in">
+            <marquee>   <h2 class="w3-container w3-cyan"><big>The Water Cycle</big></h2></marquee>
+            <div class="boxy">
+              <div class="img"><img class="cyclewater" src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/b4d255102727835.5f3d2915bd76b.gif" alt=""></div>
+          </div>
+            <h2> <a href="watercycleanime.html.html">Click for animated water cycle</a></h3>
+            <p class="w3-container w3-purple">The water cycle is a continuous process that describes the natural movement of water on, above, and below the surface of the Earth. It involves processes like evaporation, condensation, precipitation, and collection. This cycle is vital for maintaining life on our planet and ensuring a sustainable supply of water.</p>
+        </section>
+
+        <section class="fade-in">
+            <h2 class="w3-container w3-cyan"><big>Visual Tools</big></h2>
+            <p class="w3-container w3-purple">Various visual tools to help understand and combat water pollution. The animated model of the water cycle is given in the above link. Following to that we have a 3-D model for interaction and learning about the water cycle in a whole new dimension. The 3-D plane is the best way to teach it to children and spread knowledge.</p>
+
+            <!-- Embed the 3D model with enlarged size and autoplay -->
+            <div class="sketchfab-embed-wrapper">
+                <iframe width="1000px" height="900px" title="Water Cycle" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/35da9d322cbe406bbf7faf38307a20c2/embed?autostart=1&preload=1&ui_controls=0&ui_infos=0&ui_watermark=0&ui_stop=0"></iframe>
+                <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+                    <a href="https://sketchfab.com/3d-models/water-cycle-35da9d322cbe406bbf7faf38307a20c2?utm_medium=embed&utm_campaign=share-popup&utm_content=35da9d322cbe406bbf7faf38307a20c2" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Water Cycle</a> by
+                    <a href="https://sketchfab.com/Ervinuu?utm_medium=embed&utm_campaign=share-popup&utm_content=35da9d322cbe406bbf7faf38307a20c2" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Er</a> on
+                    <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=35da9d322cbe406bbf7faf38307a20c2" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+                </p>
+            </div>
+        </section>
+    </div>
+    <section>
+        <div class="swatch">
+            <div><img src="IMG_20230111_125248.jpg" height="66px"></div>
+            <div><img src="WhatsApp Image 2023-10-07 at 07.51.46_f90cd01a.jpg" height="66px"></div>
+            <div><img src="WhatsApp Image 2023-10-07 at 08.14.19_3c98512d.jpg" height="66px"></div>
+            <div><img src="dheeraj.jpg" height="66px"></div>
+          <div><img src="shaksam.jpg" height="66px"></div>
+           <div><img src="harish.jpg" height="66px"></div>
+          </div>
+        
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <footer class="fade-in">
+        <marquee> <p>   &copy; 2023 Visual Tools for Water Pollution
+        <br>
+        <br>
+       
+        <email><a href="sakshamsinghjamwal008@gmail.com">sakshamsinghjamwal008@gmail.com &nbsp;&nbsp;&nbsp;</a></email>
+       
+        <email><a href="harishkashyap0810@gmail.com">harishkashyap0810@gmail.com &nbsp;&nbsp;&nbsp;</a></email>
+        
+    <email><a href="piyushsambyal2203@gmail.com">piyushsambyal2203@gmail.com &nbsp;&nbsp;&nbsp;</email>
+    <br>
+<email><a href="Shaksamk4@gmail.com">Shaksamk4@gmail.com &nbsp;&nbsp;&nbsp;</a></email>
+
+    
+<email><a href="dheeraj221sharma@gmail.com">dheeraj221sharma@gmail.com</a></email>
+
+
+<email><a href="soanvikas092@gmail.com">soanvikas092@gmail.com</a></email></p> </marquee>
+<br>  
+<img class="logo" src="OIP.jpg" alt="logo"> 
+    </footer>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        const sections = document.querySelectorAll('.fade-in');
+
+const options = {
+    threshold: 0.5
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, options);
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+    </script>
+</body>
+</html>
